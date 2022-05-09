@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>Live-score</title>
+</head>
+
+<body>
+  <style type="text/css">
+    *{box-sizing: border-box;}
+
+  body{background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("crackk.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+ body{margin: 0;
+  min-width: 300px;
+  color: white;
+  font-family: arial;
+  }
+    div{width: 50%;
+      margin-top: 3vh;}
+        h2{font-size: 33px;
+            margin-top:0px;
+            color:white;
+            background: #456a33;}
+            p{width:66%;
+            height: 30% }
+            h6{height: 0vh;
+                width:0vw;
+                }
+                header{ background:#456a33;margin:0px;
+                position: fixed;
+                width: 100vw;
+                height:  15vh;
+                margin-top: -3vh;
+                 }
+                button{height: 3vh;
+                    width: 9vw;}
+            h3{margin-top: 12px;
+                font-size: 33px;
+               }
+        body{background: linear-gradient(to bottom left,#990044,red,orange,yellow,green,blue,indigo,violet,pink);
+            color:white;}
+  </style>
+  <header>
+  <h3>MAXWIZARD-FOOTBALL VEDIO CAMP</h3>
+  <h5>watch all live score vedio </h5>
+  </header>
+  <div id="myData"></div>
+
+<script>
+    
+  fetch('https://www.scorebat.com/video-api/v1/')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+          
+            var mainContainer = document.getElementById("myData");
+            for (var i =0; i <65; i++) {
+                var div = document.createElement("h4");
+                div.innerHTML = 'Name: ' + data[i].title+ '<br>Date:'+data[i].date + '<br>' + data[i].embed+ '<br> ';
+                mainContainer.appendChild(div);
+            }
+        }
+        </script>
+</body>
+</html>
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+  <style type="text/css">
+    body{background: linear-gradient(to right, black,brown,black);
+      color: white; 
+      margin: 12px;
+      width: 100vw;
+      }
+      .header{margin: 0px;
+    width: 95vw;
+    height: 12vh;
+    overflow: auto;
+    margin-left: 12px;
+    border: red solid 3px;
+    background: white;
+    color: blue;}
+    #top{
+        height: 8vh;
+      
+        margin-left: 12px;}
+      
+    h1{text-align: center;
+      font-size: 22px;
+      margin:0px 0px 0px 0px;}
+      h2{font-size: 22px;}
+    table{border:2px solid;
+      width: 95vw;
+    }
+    #headings{font-size: 15px;
+
+      }
+    th{background: #4567a2;
+      color:#fa3434;}
+      td{width: 13vw;
+        }
+    .table{margin-top:19vh;
+      margin-left: 12px;}
+  #results{margin-bottom: 0px;}
+  #country{width: 10vw;}
+  #Index{width:5vw;}
+  #critical,#continent,#New{width: 6vw;}
+  #recovered,#total{width: 7vw;}
+  #new,#active,#total2{width: 6.5vw;}
+  #population{width: 8vw;}
+  .container{position: fixed;
+    height: 18vh;
+    margin-top: -18vh;
+  }
+  </style>
+  <header class="container">
+    
+  
+  <div class="header">
+  <h1 >Maxwizard Covid Research </h1>
+  <h2 id="results">COVID19 Statistics Report.</h2>
+  </div>
+  <table id="top" border="1" cellpadding="2">
+    <tr  id="headings">
+    <th id="Index" rowspan="2">Index</th>
+    <th id="continent" rowspan="2">Continents</th>
+    <th id="country" rowspan="2">Country</th>
+    <th id="population" rowspan="2">Population</th>
+    <th id="cases" colspan="5">Cases</th>
+    <th id="day" rowspan="2">Day</th>
+    <th id="deaths" colspan="2">Death</th>
+    <th id="tests">Test</th>
+
+    </tr>
+    <tr>
+      
+      <th id="new">new</th>
+      <th id="active">active</th>
+      <th id="critical">critical</th>
+      <th id="recovered">recovered</th>
+      <th id="total">total</th>
+
+      <th id="New">New</th>
+      <th id="total2">total</th>
+      <th id="tests">tests</th>
+    </tr>
+  </table>
+  </header>
+  <div class="table">
+  <table id="table" border="1" cellpadding="2">
+    <tr><td>pl</td></tr>
+  </table>
+    <h3>Itz the guy Maxwiz...</h3>
+    </div>
+<script>
+// i fetch the api for covid19 and that is the code below
+  fetch("https://covid-193.p.rapidapi.com/statistics", {
+  "method": "GET",
+  "headers": {
+    "x-rapidapi-host": "covid-193.p.rapidapi.com",
+    "x-rapidapi-key": "5e4331f760mshe0ce5b3e2ed365fp1cf19cjsn3ca0dcdb9d67"
+  }
+})
+    //convert to json
+            .then(function (response) {
+                return response.json();
+            })
+            //here i call the function to handle the data
+            .then(function (data) {
+                console.log(data);
+                appendData(data)
+            }) // if any error happen so console log help here
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+            //function to handle the data for me
+        function appendData(data) {
+        var div = document.getElementById("results");
+        div.innerHTML +="<br>Result: "+data.results;
+        // i need many array sice the data is  array of object
+       for (var i=0;i<data.response.length;i++){var colmn=[];
+    colmn[0]=(i+1); //this is my index data
+  colmn[1]=data.response[i].continent;
+    colmn[2]=data.response[i].country;
+    colmn[3]=data.response[i].population;
+    colmn[4]=data.response[i].cases.new;
+    colmn[5]=data.response[i].cases.active;
+    colmn[6]=data.response[i].cases.critical;
+    colmn[7]=data.response[i].cases.recovered;
+    colmn[8]=data.response[i].cases.total;
+    colmn[9]=data.response[i].day;
+    colmn[10]=data.response[i].deaths.new;
+    colmn[11]=data.response[i].deaths.total;
+   colmn[12]=data.response[i].tests.total;
+      var tr=document.createElement("tr"); //create a table where the data will be
+          for(var u=0;u<13;u++){
+    var colmnData=colmn[u];
+    var td=document.createElement("td");
+    var dataInTable=document.createTextNode(colmnData);
+    td.appendChild(dataInTable);
+    tr.appendChild(td);
+    document.getElementById('table').appendChild(tr);
+    }}
+}
+   
+   //here is the function that get the data from the api as the api itself is has many objects properties
+        function GetdatainTable() {var colmn=[];
+    colmn[0]="i";
+  colmn[1]="data.response[i].continent";
+    colmn[2]='data.response[i].country';
+    colmn[3]='data.response[i].population';
+    colmn[4]='data.response[i].cases.new';
+    colmn[5]='data.response[i].cases.active';
+    colmn[6]='data.response[i].cases.critical';
+    colmn[7]='data.response[i].cases.recovered';
+    colmn[8]='data.response[i].cases.total';
+    colmn[9]='data.response[i].day';
+    colmn[10]='data.response[i].deaths.new';
+    colmn[11]='data.response[i].deaths.total';
+   colmn[12]='data.response[i].tests.total';
+      var tr=document.createElement("tr");
+          for(var u=0;u<13;u++){
+    var colmnData=colmn[u];
+    var td=document.createElement("td");
+    var dataInTable=document.createTextNode(colmnData);
+    td.appendChild(dataInTable);
+    tr.appendChild(td);
+    document.getElementById('table').appendChild(tr);
+    }}
+  </script>
+</body>
+</html>
+-->
+<!--fetch("https://covid-193.p.rapidapi.com/countries", {
+  "method": "GET",
+  "headers": {
+    "x-rapidapi-host": "covid-193.p.rapidapi.com",
+    "x-rapidapi-key": "5e4331f760mshe0ce5b3e2ed365fp1cf19cjsn3ca0dcdb9d67"
+  }
+})
+.then(response => {
+  console.log(response);
+})
+.catch(err => {
+  console.log(err);
+});
