@@ -68,8 +68,8 @@
       </div>
       <div class="row text-center input-group mb-3">
     
-    <span class="col-sm-4 h1 digits input-group-text" id="last"></span>
-    <span class="col-sm-8 h3 hint text-center form-control"></span>
+    <span class="col-sm-4 h1 digits input-group-text" ></span>
+    <span class="col-sm-8 h3 hint text-center form-control" id="last"></span>
       </div>
 
 
@@ -213,8 +213,9 @@ descrip[i].innerHTML=(allGuesses[i][0]).join('');
 hintList[i].innerHTML=allGuesses[i][1];
 }
 lastData=document.getElementById("last").innerHTML;
-if(lastData=="undefined"){
-document.getElementById("last").style.display="none"}
+if(lastData=="
+undefinedand wrongly placed"){
+document.getElementById("last").parentNode.style.display="none"}
 }
 
 
