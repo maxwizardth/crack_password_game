@@ -187,7 +187,7 @@ guess3=guessGeneratorWS(wos[2],wos[3],wrongDigitUsed,password)
 guess2=guessGenerator(ws[0],ws[1],wrongDigitUsed,password)
 //two digits correct
 guess4=guessGenerator(ws[2],ws[3],wrongDigitUsed,password)
-guess5=ws[4]?guessGenerator(ws[4],ws[5],wrongDigitUsed,password):null;
+guess5=ws[4]?guessGenerator(ws[4],ws[5],wrongDigitUsed,password):[];
 taskData=[
 [guess1,hint(wos[1],placement(guess1,password))],
 [guess2,hint(ws[1],placement(guess2,password))],
@@ -205,11 +205,11 @@ allData=[
 version([1,level-1,level-1,-1],[2,level-2,2,level-2,2,level-2],level),
 version([2,level-2,level-1,-1],[2,level-2,level-1,1,3,level-3],level),
 version([3,level-3,level-3,-3],[1,level-1,level-1,1,level-2,2],level),
-version([2,level-2,level-3,-3],[2,1,1,2,level,0],level),
-version([1,2,2,-1],[2,1,2,1],level),
-version([1,2,2,-1],[2,1,2,1],level),
-version([1,2,2,-1],[2,1,2,1],level),
-version([1,2,2,-1],[2,1,2,1],level)]
+version([2,level-2,level-2,-2],[2,level-2,1, level-1,level,0],level),
+version([1,level-1,level-2,-2],[level-1,1,level,0],level),
+version([1,level-1,level-1,-1],[level-2,2,level-1,1],level),
+version([3,level-3,level-3,-3],[level-2,2,2,level-2],level)
+]
 
 var data=shuffle(allData)[2];
 var allGuesses=data[0]
@@ -224,7 +224,6 @@ hintList[i].innerHTML=allGuesses[i][1];
 if(allGuesses[4][0]==''){document.getElementById('last').classList.add('disappear')}
 else{document.getElementById('last').classList.remove('disappear')}
 }
-
 
 //Time keeping codes
  function timer(){
