@@ -178,7 +178,7 @@ guess3=guessGeneratorWS(wos[2],wos[3],wrongDigitUsed,password)
 guess2=guessGenerator(ws[0],ws[1],wrongDigitUsed,password)
 //two digits correct
 guess4=guessGenerator(ws[2],ws[3],wrongDigitUsed,password)
-guess5=ws[4]?guessGenerator(ws[4],ws[5],wrongDigitUsed,password):null;
+guess5=ws[4]?guessGenerator(ws[4],ws[5],wrongDigitUsed,password):[];
 taskData=[
 [guess1,hint(wos[1],placement(guess1,password))],
 [guess2,hint(ws[1],placement(guess2,password))],
