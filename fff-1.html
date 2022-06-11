@@ -213,7 +213,7 @@ descrip[i].innerHTML=(allGuesses[i][0]).join('');
 hintList[i].innerHTML=allGuesses[i][1];
 }
 lastData=document.getElementById("last").innerHTML;
-if(!lastData){
+if(lastData=="undefined"){
 document.getElementById("last").style.display="none"}
 }
 
