@@ -68,7 +68,7 @@
       </div>
       <div class="row text-center input-group mb-3">
     
-    <span class="col-sm-4 h1 digits input-group-text"></span>
+    <span class="col-sm-4 h1 digits input-group-text" id="last"></span>
     <span class="col-sm-8 h3 hint text-center form-control"></span>
       </div>
 
@@ -212,6 +212,8 @@ for(var i=0;i<allGuesses.length;i++){
 descrip[i].innerHTML=(allGuesses[i][0]).join('');
 hintList[i].innerHTML=allGuesses[i][1];
 }
+lastData=document.getElementById("last").innerHTML;
+if(lastData){alert("_$$")}
 }
 
 
