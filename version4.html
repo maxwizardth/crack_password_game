@@ -111,7 +111,7 @@
   </div>
 
 <div class="container code col-sm-10">
-    <h1 class="text-center">Crack the code</h1>
+    <h1 class="text-center">What is the password??</h1>
     <img src="crackk.jpg" class="img-fluid"><br>
     
     <input class="text-center" type="text" id="userGuess" placeholder ="**Enter your password**">
@@ -293,7 +293,9 @@ function changeLevel(){
 level=Number(document.getElementById('changeLevel').value)+2
 document.getElementById('level').value=level
 game()
-document.getElementById('attempt').value=5
+document.getElementById('attempt').value=5;
+document.getElementById('seconds').value='00'
+document.getElementById('minute').value="08"
 }
 function checkAnswer(){
 	alert(password)
