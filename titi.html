@@ -297,10 +297,8 @@ else{document.getElementById('last').classList.remove('disappear')}
     else{seconds-=1;
       if(String(seconds).length==1){seconds='0'+String(seconds)}
       document.getElementById('seconds').value=seconds}
-        let x = document.body;
-  x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "pink" :'#'+(shuffle(['a','a','3','2','2','7'])).join('');
 }
-
+setInterval(timer,1000)
 // function keeping the number of attemt
 function  attempt() {
   var remaining=(document.getElementById('attempt').value)
