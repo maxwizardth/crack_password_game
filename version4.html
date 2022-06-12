@@ -55,7 +55,7 @@
   </div>
   <div class="input-group mb-3">
   <span class="input-group-text" id="time">Time left:</span>
-  <input type="text" class="form-control" id="minute" value="05">
+  <input type="text" class="form-control" id="minute" value="08">
   <input type="text" class="form-control" id="seconds" value="00">
      <span class="input-group-text" id="time">Level</span>
     <select onchange="changeLevel()" class="form-control" id="changeLevel">
@@ -257,6 +257,9 @@ hintList[i].innerHTML=allGuesses[i][1];
 }
 if(allGuesses[4][0]==''){document.getElementById('last').classList.add('disappear')}
 else{document.getElementById('last').classList.remove('disappear')}
+document.getElementById('attempt').value=5;
+document.getElementById('seconds').value='00'
+document.getElementById('minute').value="08"
 }
 
 //Time keeping codes
