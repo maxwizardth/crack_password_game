@@ -136,7 +136,7 @@
 
       <button type="button" class="btn btn-primary check" onclick="checkAnswer()">View Answer</button>
       <button onclick="check()" class="btn btn-primary check">Submit</button>
-       <button onclick="game()" class="btn btn-primary check">NewGame</button>
+       <button onclick="newgame()" class="btn btn-primary check">NewGame</button>
     </div>
 </div>
 
@@ -264,7 +264,7 @@ return [taskData,password]}
 function game(){
 
 var level=Number(document.getElementById('level').value);
-alert('you are to input the password in to the box at right handside. it is some digits password no repeated digit')
+
 allData=[
 version([1,level-1,level-1,-1],[2,level-2,2,level-2,2,level-2],level),
 version([2,level-2,level-1,-1],[2,level-2,level-1,1,3,level-3],level),
@@ -323,6 +323,13 @@ document.getElementById('attempt').value=5
 }
 function checkAnswer(){
 	alert(password)
+	
+}
+window.onload=alert('you are to input the password in to the box below the padlock. it is some digits password no repeated digit')
+function newgame(){
+	if(window.confirm('Are you sure you want to quit this challenge and move to new one??')){
+		game()
+	}
 }
 game()
 </script>
